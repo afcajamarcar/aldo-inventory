@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_22_161627) do
     t.string "store"
     t.string "model"
     t.integer "inventory"
-    t.integer "notification"
+    t.string "notification_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

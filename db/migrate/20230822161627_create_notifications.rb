@@ -4,7 +4,7 @@ class CreateNotifications < ActiveRecord::Migration[7.0]
       t.string :store
       t.string :model
       t.integer :inventory
-      t.integer :notification
+      t.string :notification_status
 
       t.timestamps
     end
