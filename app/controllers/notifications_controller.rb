@@ -1,6 +1,11 @@
 class NotificationsController < ApplicationController
   before_action :sanitize_data, only: [:create]
 
+  def index
+    @notifications = Notification.all
+    puts @notifications
+  end
+
   def create
     @notification = Notification.new(notification_params)
 
