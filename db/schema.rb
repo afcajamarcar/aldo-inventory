@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_22_161627) do
   enable_extension "plpgsql"
 
   create_table "notifications", force: :cascade do |t|
-    t.string "name"
+    t.string "store"
     t.string "model"
     t.integer "inventory"
     t.integer "notification"
