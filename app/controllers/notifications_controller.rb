@@ -3,7 +3,10 @@ class NotificationsController < ApplicationController
 
   def index
     @notifications = Notification.all
-    puts @notifications
+    report = SpreadsheetService.new.generate_report(@notifications)
+    tempfile = Tempfile.new(report[1])
+    report[0].write(tempfile.path)
+    send_file tempfile.path, :filename => report[1]
   end
 
   def create
