@@ -4,9 +4,12 @@ class NotificationsController < ApplicationController
   def index
     @notifications = Notification.all
     report = SpreadsheetService.new.generate_report(@notifications)
-    tempfile = Tempfile.new(report[1])
-    report[0].write(tempfile.path)
-    send_file tempfile.path, :filename => report[1]
+    puts 'filename'
+    puts report[1]
+    buffer = StringIO.new
+    report[0].write(buffer)
+    buffer.rewind
+    send_data buffer.read, filename: report[1], type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
   end
 
   def create
