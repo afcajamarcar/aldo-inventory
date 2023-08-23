@@ -4,8 +4,6 @@ class NotificationsController < ApplicationController
   def index
     @notifications = Notification.all
     report = SpreadsheetService.new.generate_report(@notifications)
-    puts 'filename'
-    puts report[1]
     buffer = StringIO.new
     report[0].write(buffer)
     buffer.rewind

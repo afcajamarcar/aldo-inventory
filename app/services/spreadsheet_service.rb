@@ -2,7 +2,6 @@ require "spreadsheet"
 
 class SpreadsheetService
   def initialize
-    puts "initialize called"
     @book = Spreadsheet::Workbook.new
     @main_sheet = @book.create_worksheet
     @main_sheet.name = "Historical Notifications" # For now it's enough to just have one sheet per book
