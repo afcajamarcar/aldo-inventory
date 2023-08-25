@@ -24,5 +24,3 @@ Then start rails server with a specific port (8081):
 ```bash
 rails s -p 8081
 ```
-
-> NOTE: Make sure to start the [shoe-store](https://github.com/mathieugagne/shoe-store) project to feed this client.
